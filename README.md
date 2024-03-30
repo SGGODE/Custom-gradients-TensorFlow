@@ -21,6 +21,23 @@ The custom ReLU activation function is defined in `custom.ipynb`. The ReLU funct
 ```python
 def custom_relu(x):
     return tf.maximum(0., x)
+
+def custom_relu(x):
+return tf.maximum(x, 0.0)
+
+def custom_relu_grad(x):
+return tf.where(x > 0, tf.ones_like(x), tf.zeros_like(x))
+
+@tf.custom_gradient
+def custom_relu_op(x):
+ y = custom_relu(x)
+ def grad(dy):
+	return custom_relu_grad(x) * dy
+return y, grad
+
 ```
 ## Usage in Sequential Model
 The custom ReLU activation function can be used in a Sequential model in TensorFlow and Keras. 
+
+## Read My Article
+For a deeper understanding of custom gradients in TensorFlow, please read my article available at : https://www.geeksforgeeks.org/custom-gradients-in-tensorflow/
