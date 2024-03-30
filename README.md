@@ -16,7 +16,7 @@ Although TensorFlow supports ReLU out of the box, this example demonstrates how 
 
 ### Custom ReLU Activation Function
 
-The custom ReLU activation function is defined in `custom_relu.py`. The ReLU function is defined as:
+The custom ReLU activation function is defined in `custom.ipynb`. The ReLU function is defined as:
 
 ```python
 def custom_relu(x):
