@@ -20,20 +20,20 @@ The custom ReLU activation function is defined in `custom.ipynb`. The ReLU funct
 
 ```python
 def custom_relu(x):
-    return tf.maximum(0., x)
+  return tf.maximum(0., x)
 
 def custom_relu(x):
-return tf.maximum(x, 0.0)
+  return tf.maximum(x, 0.0)
 
 def custom_relu_grad(x):
-return tf.where(x > 0, tf.ones_like(x), tf.zeros_like(x))
+  return tf.where(x > 0, tf.ones_like(x), tf.zeros_like(x))
 
 @tf.custom_gradient
 def custom_relu_op(x):
  y = custom_relu(x)
  def grad(dy):
-	return custom_relu_grad(x) * dy
-return y, grad
+   return custom_relu_grad(x) * dy
+ return y, grad
 
 ```
 ## Usage in Sequential Model
