@@ -41,3 +41,8 @@ The custom ReLU activation function can be used in a Sequential model in TensorF
 
 ## Read My Article
 For a deeper understanding of custom gradients in TensorFlow, please read my article available at : https://www.geeksforgeeks.org/custom-gradients-in-tensorflow/
+
+## Model A (Default ReLU):
+`Test Accuracy:` 0.9751999974250793
+## Model B (Custom ReLU): 
+`Test Accuracy:` 0.9776999950408936
